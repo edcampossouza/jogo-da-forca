@@ -1,4 +1,4 @@
-export default function Letras({ clickLetter }) {
+export default function Letras({ clickLetter, disabled }) {
   const alfabeto = [
     "a",
     "b",
@@ -30,7 +30,10 @@ export default function Letras({ clickLetter }) {
   return (
     <div className="keyboard">
       {alfabeto.map((a) => (
-        <div key={a} className="letter-option button-style">
+        <div
+          className={`letter-option button-style ${disabled ? "disabled" : ""}`}
+          key={a}
+        >
           {a.toUpperCase()}
         </div>
       ))}
