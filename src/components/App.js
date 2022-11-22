@@ -63,8 +63,10 @@ export default function App() {
     letter = letter.toLowerCase();
     if (!lettersClicked.includes(letter))
       setLettersClicked((prev) => [...prev, letter]);
+    else return;
     if (!word.split("").includes(letter)) {
       if (numErrors + 1 >= MAX_ERRORS) {
+        setNumErrors((n) => n + 1);
         gameLost();
         return;
       }
