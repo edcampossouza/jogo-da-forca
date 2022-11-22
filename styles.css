@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,700&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+}
+.game-top {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.right-side {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.game-image {
+  width: 400px;
+}
+.choose-word {
+  background-color: #27ae60;
+  color: white;
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.choose-word:hover {
+  cursor: pointer;
+}
+
+.game-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #39739d;
+  font-weight: bold;
+  background-color: #e1ecf4;
+  border: 1px solid #87afcc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.letter-option {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+.letter-option.disabled {
+  background-color: #9faab5;
+  color: #798a9f;
+}
+
+.button-style:hover {
+  cursor: pointer;
+}
+
+.button-style.disabled:hover {
+  cursor: default;
+}
+
+.guess {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-input {
+  margin-left: 10px;
+  width: 353px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #f5f5f5;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.input-label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.guess-button {
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.keyboard {
+  margin-top: 50px;
+  display: flex;
+  width: 650px;
+  flex-wrap: wrap;
+}
+
+.masked-word {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 0.075em;
+}
+
+.word-lost {
+  color: red;
+}
+
+.word-won {
+  color: green;
+}
