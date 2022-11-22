@@ -9,6 +9,9 @@ export default function Jogo({
   alphabet,
   maskedWord,
   gameStatus,
+  guessWord,
+  setGuessWord,
+  tryGuess,
 }) {
   return (
     <div className="game">
@@ -28,7 +31,12 @@ export default function Jogo({
           lettersClicked={lettersClicked}
           alphabet={alphabet}
         />
-        <Chute disabled={!playing} />
+        <Chute
+          disabled={!playing}
+          guessWord={guessWord}
+          setGuessWord={setGuessWord}
+          tryGuess={tryGuess}
+        />
       </div>
     </div>
   );

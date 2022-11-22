@@ -19,7 +19,9 @@ export default function App() {
   const [maskedWord, setMaskedWord] = useState("");
   const [lettersClicked, setLettersClicked] = useState([]);
   const [gameStatus, setGameStatus] = useState(null);
+  const [guessWord, setGuessWord] = useState("");
   const images = [img0, img1, img2, img3, img4, img5, img6];
+
   function startGame() {
     const size = palavras.length;
     const newWord = palavras[Math.floor(Math.random() * size)];
@@ -33,12 +35,21 @@ export default function App() {
     );
     setPlaying(true);
     setNumErrors(0);
+    setGameStatus("");
+    setGuessWord("");
     setLettersClicked([]);
+  }
+
+  function tryGuess() {
+    if (!playing) return;
+    if (guessWord.toLowerCase() === word.toLowerCase()) gameWon();
+    else gameLost();
   }
 
   function gameWon() {
     setGameStatus("won");
     setPlaying(false);
+    setMaskedWord(word);
   }
 
   function gameLost() {
@@ -80,6 +91,9 @@ export default function App() {
         alphabet={alfabeto}
         maskedWord={maskedWord}
         gameStatus={gameStatus}
+        guessWord={guessWord}
+        setGuessWord={setGuessWord}
+        tryGuess={tryGuess}
       />
     </>
   );
