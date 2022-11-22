@@ -1,38 +1,18 @@
-export default function Letras({ clickLetter, disabled }) {
-  const alfabeto = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
+export default function Letras({
+  disabled,
+  clickLetter,
+  lettersClicked,
+  alphabet,
+}) {
   return (
     <div className="keyboard">
-      {alfabeto.map((a) => (
+      {alphabet.map((a) => (
         <div
-          className={`letter-option button-style ${disabled ? "disabled" : ""}`}
+          className={`letter-option button-style ${
+            disabled || lettersClicked.includes(a) ? "disabled" : ""
+          }`}
           key={a}
+          onClick={() => clickLetter(a)}
         >
           {a.toUpperCase()}
         </div>
