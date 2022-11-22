@@ -54,6 +54,7 @@ export default function App() {
 
   function gameLost() {
     setGameStatus("lost");
+    setNumErrors(6);
     setPlaying(false);
     setMaskedWord(word);
   }
