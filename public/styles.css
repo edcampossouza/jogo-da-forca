@@ -115,3 +115,11 @@ html {
   font-family: "Noto Sans", sans-serif;
   letter-spacing: 0.075em;
 }
+
+.word-lost {
+  color: red;
+}
+
+.word-won {
+  color: green;
+}

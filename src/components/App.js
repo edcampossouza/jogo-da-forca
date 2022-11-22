@@ -7,22 +7,49 @@ import img4 from "../assets/forca4.png";
 import img5 from "../assets/forca5.png";
 import img6 from "../assets/forca6.png";
 import alfabeto from "../letras";
+import palavras from "../palavras";
 import Jogo from "./Jogo";
 
 export default function App() {
   const [numErrors, setNumErrors] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [word, setWord] = useState("");
+  const [maskedWord, setMaskedWord] = useState("");
   const [lettersClicked, setLettersClicked] = useState([]);
+  const [gameStatus, setGameStatus] = useState(null);
   const images = [img0, img1, img2, img3, img4, img5, img6];
   function startGame() {
+    const size = palavras.length;
+    const newWord = palavras[Math.floor(Math.random() * size)];
+    console.log(newWord);
+    setWord(newWord);
+    setMaskedWord(
+      newWord
+        .split("")
+        .map((_) => "_")
+        .join("")
+    );
     setPlaying(true);
+  }
+
+  function gameWon() {
+    setGameStatus("won");
+    setPlaying(false);
   }
 
   function clickLetter(letter) {
     letter = letter.toLowerCase();
     if (!lettersClicked.includes(letter))
       setLettersClicked((prev) => [...prev, letter]);
+    if (!word.split("").includes(letter)) setNumErrors((n) => n + 1);
+    const newMaskedWord = word
+      .split("")
+      .map((a) => ([...lettersClicked, letter].includes(a) ? a : "_"))
+      .join("");
+    setMaskedWord(newMaskedWord);
+    if (!newMaskedWord.includes("_")) {
+      gameWon();
+    }
   }
 
   return (
@@ -34,6 +61,8 @@ export default function App() {
         clickLetter={clickLetter}
         lettersClicked={lettersClicked}
         alphabet={alfabeto}
+        maskedWord={maskedWord}
+        gameStatus={gameStatus}
       />
     </>
   );

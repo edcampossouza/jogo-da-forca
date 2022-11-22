@@ -6,10 +6,10 @@ export default function Jogo({
   startGame,
   clickLetter,
   lettersClicked,
-  alphabet
-
+  alphabet,
+  maskedWord,
+  gameStatus,
 }) {
-  const wordMasked = "_ua _e _ _e _a";
   return (
     <div className="game">
       <div className="game-top">
@@ -18,7 +18,7 @@ export default function Jogo({
           <button className="choose-word" onClick={startGame}>
             Escolher Palavra
           </button>
-          <Palavra word={wordMasked} />
+          <Palavra word={maskedWord} gameStatus={gameStatus} />
         </div>
       </div>
       <div className="game-bottom">
@@ -34,6 +34,12 @@ export default function Jogo({
   );
 }
 
-function Palavra({ word }) {
-  return <span className="masked-word">{word}</span>;
+function Palavra({ word, gameStatus }) {
+  const wordClass =
+    gameStatus === "won"
+      ? "word-won"
+      : gameStatus === "lost"
+      ? "word=list"
+      : "";
+  return <span className={`masked-word ${wordClass}`}>{word}</span>;
 }
