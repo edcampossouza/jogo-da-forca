@@ -39,7 +39,7 @@ function Palavra({ word, gameStatus }) {
     gameStatus === "won"
       ? "word-won"
       : gameStatus === "lost"
-      ? "word=list"
+      ? "word-lost"
       : "";
   return <span className={`masked-word ${wordClass}`}>{word}</span>;
 }

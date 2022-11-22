@@ -10,6 +10,8 @@ import alfabeto from "../letras";
 import palavras from "../palavras";
 import Jogo from "./Jogo";
 
+const MAX_ERRORS = 6;
+
 export default function App() {
   const [numErrors, setNumErrors] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -30,6 +32,8 @@ export default function App() {
         .join("")
     );
     setPlaying(true);
+    setNumErrors(0);
+    setLettersClicked([]);
   }
 
   function gameWon() {
@@ -37,11 +41,24 @@ export default function App() {
     setPlaying(false);
   }
 
+  function gameLost() {
+    setGameStatus("lost");
+    setPlaying(false);
+    setMaskedWord(word);
+  }
+
   function clickLetter(letter) {
+    if (!playing) return;
     letter = letter.toLowerCase();
     if (!lettersClicked.includes(letter))
       setLettersClicked((prev) => [...prev, letter]);
-    if (!word.split("").includes(letter)) setNumErrors((n) => n + 1);
+    if (!word.split("").includes(letter)) {
+      if (numErrors + 1 >= MAX_ERRORS) {
+        gameLost();
+        return;
+      }
+      setNumErrors((n) => n + 1);
+    }
     const newMaskedWord = word
       .split("")
       .map((a) => ([...lettersClicked, letter].includes(a) ? a : "_"))
