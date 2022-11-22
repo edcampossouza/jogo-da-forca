@@ -28,9 +28,11 @@ export default function Letras({ clickLetter }) {
     "z",
   ];
   return (
-    <div class="keyboard">
+    <div className="keyboard">
       {alfabeto.map((a) => (
-        <div className="letter-option button-style">{a.toUpperCase()}</div>
+        <div key={a} className="letter-option button-style">
+          {a.toUpperCase()}
+        </div>
       ))}
     </div>
   );

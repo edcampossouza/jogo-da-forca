@@ -3,7 +3,7 @@ import Chute from "./Chute";
 export default function Jogo({ gameImage }) {
   const wordMasked = "_ua _e _ _e _a";
   return (
-    <div class="game">
+    <div className="game">
       <div className="game-top">
         <img className="game-image" src={gameImage} />
         <div className="right-side">
@@ -20,5 +20,5 @@ export default function Jogo({ gameImage }) {
 }
 
 function Palavra({ word }) {
-  return <span class="masked-word">{word}</span>;
+  return <span className="masked-word">{word}</span>;
 }
