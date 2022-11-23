@@ -25,7 +25,6 @@ export default function App() {
   function startGame() {
     const size = palavras.length;
     const newWord = palavras[Math.floor(Math.random() * size)];
-    console.log(newWord);
     setWord(newWord);
     setMaskedWord(
       newWord
