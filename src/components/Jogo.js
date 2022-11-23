@@ -55,12 +55,12 @@ function Palavra({ word, answer, gameStatus }) {
       ? "word-lost"
       : "";
   return (
-    <span
+    <div
       data-test="word"
       data-answer={answer}
       className={`masked-word ${wordClass}`}
     >
       {word}
-    </span>
+    </div>
   );
 }
