@@ -14,7 +14,7 @@ export default function Letras({
           }`}
           key={a}
           onClick={() => clickLetter(a)}
-          disabled={disabled}
+          disabled={disabled || lettersClicked.includes(a)}
         >
           {a.toUpperCase()}
         </button>
