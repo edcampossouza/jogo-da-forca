@@ -9,13 +9,14 @@ export default function Chute({ disabled, guessWord, setGuessWord, tryGuess }) {
         value={guessWord}
         onChange={(e) => setGuessWord(e.target.value)}
       ></input>
-      <div
+      <button
         data-test="guess-button"
         onClick={tryGuess}
         className={`guess-button button-style ${disabled ? "disabled" : ""}`}
+        disabled={disabled}
       >
         Chutar
-      </div>
+      </button>
     </div>
   );
 }

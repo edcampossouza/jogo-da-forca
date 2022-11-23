@@ -7,16 +7,17 @@ export default function Letras({
   return (
     <div className="keyboard">
       {alphabet.map((a) => (
-        <div
+        <button
           data-test="letter"
           className={`letter-option button-style ${
             disabled || lettersClicked.includes(a) ? "disabled" : ""
           }`}
           key={a}
           onClick={() => clickLetter(a)}
+          disabled={disabled}
         >
           {a.toUpperCase()}
-        </div>
+        </button>
       ))}
     </div>
   );
