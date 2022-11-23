@@ -4,13 +4,13 @@ import palavras from "../palavras";
 import Jogo from "./Jogo";
 
 
-const img0 = "./forca0.png";
-const img1 = "./forca1.png";
-const img2 = "./forca2.png";
-const img3 = "./forca3.png";
-const img4 = "./forca4.png";
-const img5 = "./forca5.png";
-const img6 = "./forca6.png";
+const img0 = "forca0.png";
+const img1 = "forca1.png";
+const img2 = "forca2.png";
+const img3 = "forca3.png";
+const img4 = "forca4.png";
+const img5 = "forca5.png";
+const img6 = "forca6.png";
 
 const MAX_ERRORS = 6;
 
