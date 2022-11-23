@@ -1,14 +1,16 @@
 import { useState } from "react";
-import img0 from "../assets/forca0.png";
-import img1 from "../assets/forca1.png";
-import img2 from "../assets/forca2.png";
-import img3 from "../assets/forca3.png";
-import img4 from "../assets/forca4.png";
-import img5 from "../assets/forca5.png";
-import img6 from "../assets/forca6.png";
 import alfabeto from "../letras";
 import palavras from "../palavras";
 import Jogo from "./Jogo";
+
+
+const img0 = "./forca0.png";
+const img1 = "./forca1.png";
+const img2 = "./forca2.png";
+const img3 = "./forca3.png";
+const img4 = "./forca4.png";
+const img5 = "./forca5.png";
+const img6 = "./forca6.png";
 
 const MAX_ERRORS = 6;
 
