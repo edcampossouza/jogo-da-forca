@@ -8,6 +8,7 @@ export default function Letras({
     <div className="keyboard">
       {alphabet.map((a) => (
         <div
+          data-test="letter"
           className={`letter-option button-style ${
             disabled || lettersClicked.includes(a) ? "disabled" : ""
           }`}

@@ -97,6 +97,7 @@ export default function App() {
         guessWord={guessWord}
         setGuessWord={setGuessWord}
         tryGuess={tryGuess}
+        answer={word}
       />
     </>
   );
