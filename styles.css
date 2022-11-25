@@ -123,3 +123,21 @@ html {
 .word-won {
   color: green;
 }
+
+@media screen and (max-width: 768px) {
+  .game-image {
+    width: 60%;
+  }
+  .keyboard {
+    width: 90%;
+  }
+  .guess {
+    flex-direction: column;
+  }
+  .game-top {
+    flex-direction: column;
+  }
+  .right-side {
+    align-items: center;
+  }
+}
